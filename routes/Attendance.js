@@ -2,16 +2,39 @@ let att = require("../models/attendence.model");
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 var lastAttDate;
+var working_days;
 var schedule = require("node-schedule");
-var j = schedule.scheduleJob("0 0 17 * * * ", function() {
+schedule.scheduleJob("30 34 00 * * * ", async function() {
   let today = new Date();
   let month = today.getMonth();
   month = month + 1;
   today = today.getDate() + "-" + month;
   console.log(today);
   if (lastAttDate == today) {
-    att
-      .updateMany({ $set: {} })
+      var obj = new Object;
+      obj[today]={
+          am:'',
+          pm:''
+      }
+      var nobj = new Object;
+      nobj[today]={
+          am:'A',
+          pm:'A',
+      }
+  await  att
+      .updateMany(obj, {$set: {nobj,"working_days":working_days+1}} )
+      .then(()=>console.log("absent"))
+      .catch();
+      obj[today]={
+        am:'P',
+        pm:''
+    }
+    nobj[today]={
+        am:'P',
+        pm:'A',
+    }
+   await att
+      .updateMany(obj, {$set: {nobj},"working_days":working_days+0.5} )
       .then()
       .catch();
   }
@@ -44,7 +67,6 @@ router.route("/update").get(async (req, res) => {
   let uid = req.get("uid");
   let now = new Date();
   var obj = new Object();
-  var working ;
   obj[today] = {
     am: " ",
     pm: " "
@@ -56,6 +78,7 @@ router.route("/update").get(async (req, res) => {
       am = data[today].am;
       obj["total_days"] = data["total_days"];
       obj["working_days"] = data["working_days"];
+      working_days =  obj["working_days"];
       console.log(am);
     })
     .catch();
