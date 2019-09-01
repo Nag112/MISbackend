@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 var lastAttDate;
 var working_days;
 var schedule = require("node-schedule");
-schedule.scheduleJob("30 34 00 * * * ", async function() {
+schedule.scheduleJob("30 37 00 * * * ", async function() {
   let today = new Date();
   let month = today.getMonth();
   month = month + 1;
