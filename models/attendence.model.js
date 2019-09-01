@@ -249,6 +249,130 @@ const attSchema = new schema(
         '30-08':{
             am:String,
             pm:String
+        }, 
+        "31-08" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "01-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "02-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "03-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "04-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "05-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "06-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "07-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "08-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "09-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "10-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "11-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "12-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "13-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "14-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "15-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "16-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "17-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "18-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "19-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "20-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "21-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "22-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "23-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "24-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "25-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "26-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "27-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "28-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "29-09" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "30-09" : {
+            "am" : String, 
+            "pm" : String
         }
    })
 
