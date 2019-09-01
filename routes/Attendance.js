@@ -44,6 +44,7 @@ router.route("/update").get(async (req, res) => {
   let uid = req.get("uid");
   let now = new Date();
   var obj = new Object();
+  var working ;
   obj[today] = {
     am: " ",
     pm: " "
@@ -53,11 +54,13 @@ router.route("/update").get(async (req, res) => {
     .findOne({ uid: uid })
     .then(data => {
       am = data[today].am;
-      obj["total_days"] = data["total_days"]
+      obj["total_days"] = data["total_days"];
+      obj["working_days"] = data["working_days"];
       console.log(am);
     })
     .catch();
   if (time >= 13) {
+    obj["working_days"] = obj["working_days"]+0.5;
     if (am === " ") {
       obj[today].am = "A";
       obj[today].pm = "P";      
@@ -78,6 +81,7 @@ router.route("/update").get(async (req, res) => {
         ();
     }
   } else {
+    obj["working_days"] = obj["working_days"]+0.5;
     obj[today].am = "P";
     obj["total_days"]=obj["total_days"]+0.5;
     console.log(obj);

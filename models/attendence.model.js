@@ -5,6 +5,7 @@ const attSchema = new schema(
     {
         uid:String,
         total_days:Number,
+        working_days:Number,
         '1-07':{
             am:String,
             pm:String
