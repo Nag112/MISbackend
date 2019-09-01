@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 var lastAttDate;
 var working_days;
 var schedule = require("node-schedule");
-schedule.scheduleJob("30 37 00 * * * ", async function() {
+schedule.scheduleJob("0 0 17 * * * ", async function() {
   let today = new Date();
   let month = today.getMonth();
   month = month + 1;
@@ -37,6 +37,14 @@ schedule.scheduleJob("30 37 00 * * * ", async function() {
       .updateMany(obj, {$set: {nobj},"working_days":working_days+0.5} )
       .then()
       .catch();
+  }
+  else{
+    var nobj = new Object;
+    nobj[today]={
+        am:'H',
+        pm:'H',
+    }
+      att.updateMany({$set:{nobj}}).then().catch();
   }
 });
 router.route("/get").get((req, res) => {
