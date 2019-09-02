@@ -6,7 +6,9 @@ const loginRouter = require('./routes/loginRouter');
 const getStudent = require('./routes/getStudent');
 const Attendance = require('./routes/Attendance');
 const getFaculty = require('./routes/getFaculty');
-const getChat = require('./routes/getChat')
+const getAdmin = require('./routes/getAdmin');
+const getChat = require('./routes/getChat');
+const stud = require('./routes/student');
 require('dotenv').config();
 const session = require('express-session');
 const app = express();
@@ -24,8 +26,10 @@ connection.once('open', () => { console.log("Connection successfull") });
 app.use('/verifyuser',loginRouter);
 app.use('/fetchstudent',getStudent);
 app.use('/fetchfaculty',getFaculty);
+app.use('/fetchadmin',getAdmin)
 app.use('/attendance',Attendance);
 app.use('/chat',getChat);
+app.use('/student',stud);
 app.get('/fetchcourse',(req,res)=>
 {
     console.log(req.params.id)
