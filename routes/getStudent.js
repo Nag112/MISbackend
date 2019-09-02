@@ -38,6 +38,11 @@ router.route('/').get((req,res)=>
     }
 });
 
-
+router.route('/course').get((req,res)=>{
+    let course = req.params.course;
+    student.find({mycourses:course},{"cid":1,'_id':0}).then(stu=>{
+        res.json(stu);
+    })
+})
 module.exports = router;
 
