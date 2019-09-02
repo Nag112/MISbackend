@@ -9,7 +9,7 @@ router.route('/').get((req,res)=>
         { 
             if(!err)            
             {   console.log(data.user_id) 
-                student.findOne({ 'uid': data.user_id })
+                admin.findOne({ 'uid': data.user_id })
                 .then(stu => {                     
                     let resp_data = {
                                     name:stu.name,
