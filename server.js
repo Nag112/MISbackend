@@ -17,7 +17,15 @@ app.use(router);
 const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
+const bodyParser = require('body-parser')
 
+app.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+)
+
+app.use(bodyParser.json())
 const uri = "mongodb://fantastic:Fantastic4@ds359847.mlab.com:59847/heroku_1vbpcvlk";
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true },(err)=>{});
 const connection = mongoose.connection;

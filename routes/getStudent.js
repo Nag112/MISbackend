@@ -1,6 +1,7 @@
 let student = require('../models/students');
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
+
 router.route('/').get((req,res)=>
 { let token =  req.get('token');
     if(token)

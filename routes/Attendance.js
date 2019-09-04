@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 var lastAttDate;
 var working_days;
 var schedule = require("node-schedule");
+
 schedule.scheduleJob("0 0 17 * * * ", async function() {
   let today = new Date();
   let month = today.getMonth();
@@ -47,6 +48,7 @@ schedule.scheduleJob("0 0 17 * * * ", async function() {
       att.updateMany({$set:{nobj}}).then().catch();
   }
 });
+
 router.route("/get").get((req, res) => {
   let token = req.get("token");
   if (token) {
@@ -68,12 +70,14 @@ router.route("/get").get((req, res) => {
   }
 });
 
-router.route("/update").get(async (req, res) => {
-  let today = req.get("date");
-  let time = req.get("time");
+router.route("/update/:uid").get(async (req, res) => {
+  let today = new Date();
+  let month = today.getMonth();
+  let time = today.getHours();
+  month = month + 1;
+  today = "0"+today.getDate() + "-0" + month;  
   lastAttDate = today;
-  let uid = req.get("uid");
-  let now = new Date();
+  let uid = req.params.uid;
   var obj = new Object();
   obj[today] = {
     am: " ",
@@ -90,7 +94,8 @@ router.route("/update").get(async (req, res) => {
       console.log(am);
     })
     .catch();
-  if (time >= 13) {
+    res.send(uid)
+  if (9>=time > 13) {
     obj["working_days"] = obj["working_days"]+0.5;
     if (am === " ") {
       obj[today].am = "A";
@@ -107,11 +112,11 @@ router.route("/update").get(async (req, res) => {
       att
         .updateOne({ uid: uid }, { $set: obj })
         .then(res.send("updated the pm"))
-        .catch
-        // res.send('error')
-        ();
+        .catch(
+          // res.send('error')
+        );
     }
-  } else {
+  } else if(13<=time<=15){
     obj["working_days"] = obj["working_days"]+0.5;
     obj[today].am = "P";
     obj["total_days"]=obj["total_days"]+0.5;
@@ -122,6 +127,9 @@ router.route("/update").get(async (req, res) => {
       .catch
       // res.send('error')
       ();
+  }
+  else{
+    res.send("Please come on time");
   }
 });
 
