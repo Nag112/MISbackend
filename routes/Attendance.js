@@ -94,7 +94,6 @@ router.route("/update/:uid").get(async (req, res) => {
       console.log(am);
     })
     .catch();
-    res.send(uid)
   if (9>=time > 13) {
     obj["working_days"] = obj["working_days"]+0.5;
     if (am === " ") {
@@ -107,7 +106,7 @@ router.route("/update/:uid").get(async (req, res) => {
     } else {
       obj[today].am = am;
       obj[today].pm = "P";
-      obj["total_days"]=obj["total_days"]+0.5;
+      obj["total_days"]=obj["total_days"]+0.5; 
       console.log(obj);
       att
         .updateOne({ uid: uid }, { $set: obj })
