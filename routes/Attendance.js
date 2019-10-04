@@ -10,7 +10,6 @@ schedule.scheduleJob("0 0 17 * * * ", async function() {
   let month = today.getMonth();
   month = month + 1;
   today = today.getDate() + "-" + month;
-  console.log(today);
   if (lastAttDate == today) {
       var obj = new Object;
       obj[today]={
