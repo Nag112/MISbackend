@@ -114,7 +114,7 @@ router.route("/update/:uid").get(async (req, res) => {
            res.send('error')
         );
     }
-  } else if(time>=8){
+  } else {
     console.log(obj["working_days"])
     obj["working_days"] = obj["working_days"]+0.5;
    // console.log(obj['working_days'])
@@ -129,9 +129,7 @@ router.route("/update/:uid").get(async (req, res) => {
        res.send('error')
       ();
   }
-  else{
-    res.send("Please come on time");
-  }
+  
 });
 
 module.exports = router;
