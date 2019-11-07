@@ -92,7 +92,8 @@ router.route("/update/:uid").get(async (req, res) => {
       obj["working_days"] = Number(data.working_days);
     })
     .catch();
-  if (time >= 13) 
+    console.log(time)
+  if (time >= 12) 
   {
     obj["working_days"] = obj["working_days"]+0.5;
     if (am === " ") {
