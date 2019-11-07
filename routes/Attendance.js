@@ -92,8 +92,8 @@ router.route("/update/:uid").get(async (req, res) => {
       obj["working_days"] = Number(data.working_days);
     })
     .catch();
-  if (time > 13) {
-  
+  if (time >= 13) 
+  {
     obj["working_days"] = obj["working_days"]+0.5;
     if (am === " ") {
       obj[today].am = "A";
@@ -129,7 +129,6 @@ router.route("/update/:uid").get(async (req, res) => {
        res.send('error')
       ();
   }
-  
 });
 
 module.exports = router;

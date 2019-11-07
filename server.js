@@ -8,6 +8,7 @@ const Attendance = require('./routes/Attendance');
 const getFaculty = require('./routes/getFaculty');
 const getAdmin = require('./routes/getAdmin');
 const getChat = require('./routes/getChat');
+const events = require('./routes/events');
 const stud = require('./routes/student');
 require('dotenv').config();
 const session = require('express-session');
@@ -37,6 +38,7 @@ app.use('/fetchfaculty',getFaculty);
 app.use('/fetchadmin',getAdmin)
 app.use('/attendance',Attendance);
 app.use('/chat',getChat);
+app.use('/events',events);
 app.use('/student',stud);
 app.get('/fetchcourse',(req,res)=>
 {
