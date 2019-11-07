@@ -93,7 +93,7 @@ router.route("/update/:uid").get(async (req, res) => {
       console.log(am);
     })
     .catch();
-  if (9>=time > 13) {
+  if (time < 13) {
     obj["working_days"] = obj["working_days"]+0.5;
     if (am === " ") {
       obj[today].am = "A";
@@ -111,10 +111,10 @@ router.route("/update/:uid").get(async (req, res) => {
         .updateOne({ uid: uid }, { $set: obj })
         .then(res.send("updated the pm"))
         .catch(
-          // res.send('error')
+           res.send('error')
         );
     }
-  } else if(13<=time<=15){
+  } else if(time<=15){
     obj["working_days"] = obj["working_days"]+0.5;
     obj[today].am = "P";
     obj["total_days"]=obj["total_days"]+0.5;
@@ -123,7 +123,7 @@ router.route("/update/:uid").get(async (req, res) => {
       .updateOne({ uid: uid }, { $set: obj })
       .then(res.send("updated the am"))
       .catch
-      // res.send('error')
+       res.send('error')
       ();
   }
   else{
