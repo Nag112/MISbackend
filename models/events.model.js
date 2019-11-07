@@ -4,10 +4,9 @@ const Schema = mongoose.Schema;
         {     
                 name: String,
                 category: String,
-                requirements: String
-                
+                requirements: String                
             })   
-    const events = mongoose.model('events', chatSchema);
+    const events = mongoose.model('events', eventsSchema);
     
 module.exports = events;
     
