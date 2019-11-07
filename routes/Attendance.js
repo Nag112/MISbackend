@@ -74,7 +74,7 @@ router.route("/update/:uid").get(async (req, res) => {
   let month = today.getMonth();
   let time = today.getHours();
   month = month + 1;
-  today = "0"+today.getDate() + "-0" + month;  
+  today = "0"+today.getDate() + "-" + month;  
   lastAttDate = today;
   let uid = req.params.uid;
   var obj = new Object();
@@ -83,17 +83,17 @@ router.route("/update/:uid").get(async (req, res) => {
     pm: " "
   };
   var am;
+  console.log(uid)
   await att
     .findOne({ uid: uid })
     .then(data => {
-      am = data[today].am;
-      obj["total_days"] = data["total_days"];
-      obj["working_days"] = data["working_days"];
-      working_days =  obj["working_days"];
-      console.log(am);
+     am = data[today].am;
+      obj["total_days"] = Number(data.total_days);
+      obj["working_days"] = Number(data.working_days);
     })
     .catch();
-  if (time < 13) {
+  if (time > 13) {
+  
     obj["working_days"] = obj["working_days"]+0.5;
     if (am === " ") {
       obj[today].am = "A";
@@ -114,15 +114,18 @@ router.route("/update/:uid").get(async (req, res) => {
            res.send('error')
         );
     }
-  } else if(time<=15){
+  } else if(time>=8){
+    console.log(obj["working_days"])
     obj["working_days"] = obj["working_days"]+0.5;
+   // console.log(obj['working_days'])
     obj[today].am = "P";
+   // console.log(obj['total_days'])
     obj["total_days"]=obj["total_days"]+0.5;
     console.log(obj);
     att
       .updateOne({ uid: uid }, { $set: obj })
       .then(res.send("updated the am"))
-      .catch
+      .catch()
        res.send('error')
       ();
   }
