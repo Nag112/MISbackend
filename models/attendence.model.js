@@ -374,6 +374,250 @@ const attSchema = new schema(
         "30-09" : {
             "am" : String, 
             "pm" : String
+        }, 
+        "01-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "02-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "03-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "04-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "05-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "06-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "07-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "08-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "09-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "10-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "11-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "12-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "13-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "14-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "15-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "16-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "17-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "18-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "19-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "20-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "21-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "22-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "23-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "24-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "25-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "26-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "27-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "28-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "29-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "30-10" : {
+            "am" : String, 
+            "pm" : String
+        },
+        "31-10" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "01-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "02-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "03-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "04-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "05-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "06-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "07-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "08-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "09-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "10-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "11-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "12-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "13-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "14-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "15-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "16-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "17-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "18-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "19-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "20-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "21-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "22-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "23-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "24-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "25-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "26-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "27-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "28-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "29-11" : {
+            "am" : String, 
+            "pm" : String
+        }, 
+        "30-11" : {
+            "am" : String, 
+            "pm" : String
         }
    })
 
