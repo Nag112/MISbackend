@@ -4,12 +4,15 @@ const jwt = require('jsonwebtoken');
 
 router.route('/').get((req,res)=>
 { let token =  req.get('token');
+console.log('no token')
     if(token)
     {
+       
         jwt.verify(token,'NagaC',(err,data)=>
         { 
+           
             if(!err)            
-            {   console.log(data.user_id) 
+            {   
                 student.findOne({ 'uid': data.user_id })
                 .then(stu => {                     
                     let resp_data = {

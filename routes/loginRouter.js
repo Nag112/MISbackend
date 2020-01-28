@@ -9,7 +9,7 @@ router.route('/').post((req, res) => {
           if(user!=={}){ 
             jwt.sign({
                 user_id:user._id
-            },'Sridevi',{expiresIn:60*20},(err,token)=>
+            },'NagaC',{expiresIn:60*20},(err,token)=>
             {                            
                console.log(token);
                 res.json({token:token,uid:user._id,designation:user.designation,name:user.name});
