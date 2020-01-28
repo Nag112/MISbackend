@@ -6,7 +6,7 @@ router.route('/').get((req,res)=>
 { let token =  req.get('token');
     if(token)
     {
-        jwt.verify(token,'Sridevi',(err,data)=>
+        jwt.verify(token,'NagaC',(err,data)=>
         { 
             if(!err)            
             {   console.log(data.user_id) 
